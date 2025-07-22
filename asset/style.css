@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ddd;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 1200px;
+  margin: 100px auto;
+}
+
+.card {
+  width: 800px;
+  height: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.card h1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card pre {
+  text-align: left;
+  padding-left: 0;
+  white-space: pre;
+  font-family: monospace;
+  line-height: 1.4;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 10px 0;
+}
+
+/* Main counter for the entire list */
+
+.list-style-roman{
+    counter-reset: list-style-roman;
+    list-style-type: upper-roman;
+}
+.list-style-decs{
+    counter-reset: list-style-decs;
+    list-style-type: decimal;
+}
+.list-style-discs{
+    list-style-type: disc;
+}
+.list-style-circle{
+    list-style-type: circle;
+}
+.list-style-square{
+    list-style-type: square;
+}
+
+
+.list-style-roman,
+.list-style-decs,
+.list-style-discs,
+.list-style-circle,
+.list-style-square,
+.list-style-fifth{
+    padding-left: 20px;
+}
+
+.list-style-roman li::after{
+    counter-increment: list-style-roman;
+     content:  counters(list-style-roman,".");
+}
+
+/* Custom counter for third card */
+.custom-counter {
+  counter-reset: custom-counter;
+  padding-left: 20px;
+}
+
+.custom-counter > li {
+  list-style: none;
+  margin-bottom: 10px;
+  counter-increment: custom-counter;
+}
+
+.custom-counter > li:before {
+  content: counter(custom-counter);
+  color: #006600;
+  background-color: #006600;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.nested-counter {
+  counter-reset: nested-counter;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.nested-counter > li {
+  list-style: none;
+  margin-bottom: 5px;
+  counter-increment: nested-counter;
+}
+
+.nested-counter > li:before {
+  content: counter(custom-counter) "." counter(nested-counter);
+  color: white;
+  background-color: #006600;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 12px;
+}
