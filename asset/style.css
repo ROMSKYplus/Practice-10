@@ -11,6 +11,7 @@ body {
 
 .container {
   width: 1200px;
+  height: 100%;
   margin: 100px auto;
 }
 
@@ -20,9 +21,9 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 20px;
-  margin-bottom: 30px;
+  /* margin: auto; */
+  margin: 0 auto 30px auto; 
 }
-
 .card h1 {
   font-size: 18px;
   font-weight: bold;
@@ -47,7 +48,7 @@ hr {
 /* Main counter for the entire list */
 
 .list-style-roman{
-    counter-reset: list-style-roman;
+    counter-reset: style-roman;
     list-style-type: upper-roman;
 }
 .list-style-decs{
@@ -74,9 +75,9 @@ hr {
     padding-left: 20px;
 }
 
-.list-style-roman li::after{
-    counter-increment: list-style-roman;
-     content:  counters(list-style-roman,".");
+.list-style-roman > li::after{
+    counter-increment: style-roman;
+    content: ""counters(style-roman,".")" ";
 }
 
 /* Custom counter for third card */
@@ -88,10 +89,11 @@ hr {
 .custom-counter > li {
   list-style: none;
   margin-bottom: 10px;
-  counter-increment: custom-counter;
+  
 }
 
 .custom-counter > li:before {
+  counter-increment: custom-counter;
   content: counter(custom-counter);
   color: #006600;
   background-color: #006600;
@@ -131,4 +133,4 @@ hr {
   margin-right: 10px;
   font-weight: bold;
   font-size: 12px;
-}
+} 
